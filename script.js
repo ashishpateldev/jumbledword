@@ -57,6 +57,10 @@ btn.addEventListener('click', function(){
             main.style.background = "#0be881";
             head.innerHTML = "You are correct";
             gif.classList.toggle('hiddengif');
+            // btn.innerHTML = "Start again"; // 3 line code to start the game again
+            // guess.classList.toggle('hidden');
+            // guess.value = "";
+            
             btn.style.display = "none"; //button hide after answer is correct
             guess.style.display= "none"; // input hide after answer is correct
             msg.style.display = "none"; // the jumbled word will hide after answwer is correct

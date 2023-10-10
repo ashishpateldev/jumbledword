@@ -1,4 +1,3 @@
-
 const guess = document.querySelector('.hidden');
 const btn = document.querySelector('.btn');
 const msg = document.querySelector('.msg');
@@ -57,6 +56,7 @@ btn.addEventListener('click', function(){
             main.style.background = "#0be881";
             head.innerHTML = "You are correct";
             gif.classList.toggle('hiddengif');
+            
             // btn.innerHTML = "Start again"; // 3 line code to start the game again
             // guess.classList.toggle('hidden');
             // guess.value = "";

@@ -4,6 +4,7 @@ const msg = document.querySelector('.msg');
 const main = document.querySelector('.main');
 const head = document.querySelector('.head');
 const gif = document.querySelector('.hiddengif');
+const start = document.querySelector('.start');
 
 let play = false;
 let newCityName = " ";
@@ -44,29 +45,29 @@ const scrambleWords = (arr) =>{
 btn.addEventListener('click', function(){
      if(!play){
       play = true;
-      btn.innerHTML = "Guess";
+      btn.innerHTML = "CHECK";
       guess.classList.toggle('hidden');
       newCityName = citys();
       randWords = scrambleWords(newCityName.split("")).join("");
-      msg.innerHTML = randWords;
+      msg.innerHTML = `Guess : ${randWords}`;
      } 
      else{
       let tempWord = guess.value;
       if(tempWord === newCityName){
+            play = false;
             main.style.background = "#0be881";
-            head.innerHTML = "You are correct";
-            gif.classList.toggle('hiddengif');
-            
-            // btn.innerHTML = "Start again"; // 3 line code to start the game again
-            // guess.classList.toggle('hidden');
-            // guess.value = "";
-            
-            btn.style.display = "none"; //button hide after answer is correct
-            guess.style.display= "none"; // input hide after answer is correct
-            msg.style.display = "none"; // the jumbled word will hide after answwer is correct
+            head.innerHTML = `You are Correct ! it's ${newCityName}`;
+            // gif.classList.toggle('hiddengif');
+            btn.innerHTML = "START AGAIN";
+            guess.classList.toggle('hidden');
+            guess.value = "";
+
       }else{
             main.style.background = "red";
-            head.innerHTML = "You are wrong";
+            head.innerHTML = `You are Wrong!! TRY AGAIN`;
+            btn.innerHTML = "TRY AGAIN";
+            
+      
       }
      }
 })
